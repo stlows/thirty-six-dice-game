@@ -1,4 +1,4 @@
-button {
+button.gameBtn {
   padding: 1em 2em;
   background-color: white;
   border-radius: 10px;
@@ -7,9 +7,11 @@ button {
   font-weight: bold;
   transition: outline 0.05s ease-in-out;
 }
-button:not([disabled]):hover {
+
+button.gameBtn:not([disabled]):hover {
   outline: 5px solid rgb(103, 103, 216);
 }
-button:not([disabled]):active {
+
+button.gameBtn:not([disabled]):active {
   outline: 10px solid rgb(103, 103, 216);
 }

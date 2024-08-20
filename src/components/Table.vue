@@ -139,8 +139,8 @@ onMounted(() => {
       </div>
       <p class="message mb-6" v-show="message">{{ message }}</p>
       <div class="actions">
-        <button @click="roll" :disabled="cantRoll">Roll !</button>
-        <button @click="endturn" :disabled="rollsLeft === ROLLS">
+        <button class="gameBtn" @click="roll" :disabled="cantRoll">Roll !</button>
+        <button class="gameBtn" @click="endturn" :disabled="rollsLeft === ROLLS">
           End turn
         </button>
       </div>
@@ -160,6 +160,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
 }
+
 .dices {
   display: flex;
   max-width: 600px;

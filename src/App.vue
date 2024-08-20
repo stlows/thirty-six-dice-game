@@ -22,7 +22,8 @@ players[activePlayerIndex].isActive = true;
 for (let i = 0; i < DICES_COUNT; i++) {
   dices.push(new DiceModel());
 }
-function endturn() {
+
+function endturn() : void {
   if (mallusRound.value) {
     const count = dices.filter(
       (d) => d.value === mallusRoundValue.value
@@ -72,12 +73,14 @@ function nextPlayer() {
   players[activePlayerIndex].isActive = true;
   resetDices();
 }
+
 function killPlayer(player: PlayerModel) {
   player.alive = false;
   if (players.filter((p) => p.alive).length === 1) {
     logs.unshift(players.find((p) => p.alive)?.name + " won the game !");
   }
 }
+
 function nextAlivePlayerIndex(): number {
   let i = (activePlayerIndex + 1) % players.length;
   while (!players[i].alive) {
@@ -85,11 +88,13 @@ function nextAlivePlayerIndex(): number {
   }
   return i;
 }
-function resetDices() {
+
+function resetDices() : void {
   dices.forEach((d) => d.reset());
   rollsLeft.value = ROLLS;
 }
-function rolled() {
+
+function rolled() : void {
   if (dices.filter((d) => !d.holded).length === 0) {
     rollsLeft.value = 1;
   }
